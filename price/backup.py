@@ -11,4 +11,3 @@ res='D:\老毛桃'
 tra='D:\hh'+time.strftime('%Y%m')+'.zip'
 com="rar a %s %s"%(tra,res)
 a=os.system(com)
-
