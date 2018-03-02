@@ -10,7 +10,7 @@ from sklearn import tree
 from sklearn import preprocessing
 from sklearn.externals.six import StringIO
 #导入文件
-allElectronicsData=open('AllElectronics.csv', 'r')
+allElectronicsData=open('E:\study\Python\pythoncode\dicision tree\AllElectronics.csv', 'r')
 reader = csv.reader(allElectronicsData)
 feauterlist=[]
 lablelist=[]
