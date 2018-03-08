@@ -68,5 +68,16 @@ Y_pred = clf.predict(X_test_pca)
 print("花费时间%0.3fs" % (time() - t0))
 print(classification_report(Y_test, Y_pred, target_names=strName))
 print(confusion_matrix(Y_test, Y_pred, labels=range(len(strName))))
+# 图形化结果
+def title(y_pred, y_test, target_names, i):
+    pred_name = target_names[y_pred[i]].rsplit(' ', 1)[-1]
+    true_name = target_names[y_test[i]].rsplit(' ', 1)[-1]
+    return 'predicted: %s\ntrue:      %s' % (pred_name, true_name)
+
+prediction_titles = [title(Y_pred, Y_test, strName, i)\
+                     for i in range(Y_pred.shape[0])]
+
+plot_gallery(X_test, prediction_titles, h, w)
+plt.show()
 
 
