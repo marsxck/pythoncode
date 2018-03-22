@@ -6,11 +6,13 @@ Created on Wed Mar 21 10:16:16 2018
 """
 import csv  
 import numpy as np
+from sklearn import linear_model 
 data=open('data.csv','r',encoding='utf-8')
 read=csv.reader(data)
 darr=[]
 for row in read:
     darr.append(row)
-nparr=np.array(darr)
+nparr=np.array(darr) 
 x=nparr[:,:-1]
-y=nparr[:,-1]    
+y=nparr[:,-1]     
+reg=linear_model
