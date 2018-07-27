@@ -9,7 +9,6 @@ class NewsSpider(scrapy.Spider):
     name = 'news'
     allowed_domains = ['news.com']
     start_urls = ['http://dig.chouti.com/']
-
     def parse(self, response):
         #print(response.url)
         #print(response.text)
