@@ -5,18 +5,21 @@ Created on Mon May 14 17:40:19 2018
 @author: Administrator
 """
 import socket
-PORT=7788
+PORT=1234
 BUFFSIZE=1024
-HOST='118.89.237.230'
+HOST='10.3.9.152'
 ADDR=(HOST,PORT)
 tcpclient=socket.socket()
 tcpclient.connect(ADDR)
-data={"src":"11111","sr":"21121"}
-#while True:
-    #data=input(">")
-    #if not data:
-       #break
-tcpclient.send(str(data).encode())
+i=0
+
+while True:
+    i=i+1
+    data=input(">");
+    tcpclient.send(str(data).encode())
+    if not data:
+       break   
+    print(tcpclient.recv(2024))
     
 tcpclient.close()
                    
