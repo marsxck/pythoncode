@@ -36,7 +36,7 @@ class NewsSpider(scrapy.Spider):
         for url_s in hxs:
             md5_url = self.md5(url_s)
             if md5_url in self.visited_urls:
-                pass
+                print('com')
             else: 
                 self.visited_urls.add(md5_url)
                 url="http://dig.chouti.com%s"%url_s

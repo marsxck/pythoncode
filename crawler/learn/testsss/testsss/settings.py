@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for learn project
+# Scrapy settings for testsss project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'learn'
+BOT_NAME = 'testsss'
 
-SPIDER_MODULES = ['learn.spiders']
-NEWSPIDER_MODULE = 'learn.spiders'
+SPIDER_MODULES = ['testsss.spiders']
+NEWSPIDER_MODULE = 'testsss.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
+#USER_AGENT = 'testsss (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -40,22 +40,20 @@ ROBOTSTXT_OBEY = True
 
 # Override the default request headers:
 #DEFAULT_REQUEST_HEADERS = {
-   #'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-  #'Accept-Language': 'en',
-  #'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
-
+#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+#   'Accept-Language': 'en',
 #}
 
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'learn.middlewares.LearnSpiderMiddleware': 543,
+#    'testsss.middlewares.TestsssSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'learn.middlewares.LearnDownloaderMiddleware': 543,
+#    'testsss.middlewares.TestsssDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -67,7 +65,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'learn.pipelines.LearnPipeline': 300,
+#    'testsss.pipelines.TestsssPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
