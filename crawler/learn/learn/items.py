@@ -8,7 +8,9 @@
 import scrapy
 
 
-class LearnItem(scrapy.Item):
+class ChoutiItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    title=scrapy.Field()
+    href=scrapy.Field()
     pass

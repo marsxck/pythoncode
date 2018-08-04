@@ -4,6 +4,7 @@ import sys
 import io
 from scrapy.http import Request
 from scrapy.selector import Selector, HtmlXPathSelector
+from ..items import ChoutiItem
 #sys.stdout=io.TextIOWrapper(sys.stdout.buffer,encoding='utf-8')
 
 class NewsSpider(scrapy.Spider):
@@ -28,10 +29,14 @@ class NewsSpider(scrapy.Spider):
         #hxs=Selector(response=response).xpath('//a')
         #for i in hxs:
         #    print(i)
-        #hxs=Selector(response=response).xpath('//div[@id="content-list"]/div[@class="item"]/div[@class="news-content"]')
-        #for i in hxs:
-        #    a=i.xpath('.//div[@class="part1"]/a/text()').extract_first()
-        #    print(a.strip())
+        #提取标题和链接
+        hxs1=Selector(response=response).xpath('//div[@id="content-list"]/div[@class="item"]/div[@class="news-content"]')
+        for i in hxs1:
+            title=i.xpath('.//div[@class="part1"]/a/text()').extract_first().strip()
+            href=i.xpath('.//@href').extract_first().strip()
+            item_obj=ChoutiItem(title=title,href=href)
+            yield item_obj
+        
         hxs=Selector(response=response).xpath('//a[re:test(@href,"/all/hot/recent/\d+")]/@href').extract()
         for url_s in hxs:
             md5_url = self.md5(url_s)
@@ -40,5 +45,4 @@ class NewsSpider(scrapy.Spider):
             else: 
                 self.visited_urls.add(md5_url)
                 url="http://dig.chouti.com%s"%url_s
-                print(url)
                 yield Request(url=url,callback=self.parse)
